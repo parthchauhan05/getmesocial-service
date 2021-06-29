@@ -4,20 +4,20 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
-public class Album {
+public class Comment {
+
     @Id
     private String id;
-    private String name;
+    private String photoId;
     private String createdBy;
-    private String coverPhotoUrl;
+    private String message;
     private Date dateCreated;
 
-
-    public Album(String id, String name, String createdBy, String coverPhotoUrl, Date dateCreated) {
+    public Comment(String id, String photoId, String createdBy, String message, Date dateCreated) {
         this.id = id;
-        this.name = name;
+        this.photoId = photoId;
         this.createdBy = createdBy;
-        this.coverPhotoUrl = coverPhotoUrl;
+        this.message = message;
         this.dateCreated = dateCreated;
     }
 
@@ -29,12 +29,12 @@ public class Album {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPhotoId() {
+        return photoId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPhotoId(String photoId) {
+        this.photoId = photoId;
     }
 
     public String getCreatedBy() {
@@ -45,12 +45,12 @@ public class Album {
         this.createdBy = createdBy;
     }
 
-    public String getCoverPhotoUrl() {
-        return coverPhotoUrl;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCoverPhotoUrl(String coverPhotoUrl) {
-        this.coverPhotoUrl = coverPhotoUrl;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Date getDateCreated() {

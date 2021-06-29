@@ -4,22 +4,13 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
-public class Album {
+public class Photo {
     @Id
     private String id;
-    private String name;
+    private String albumId;
     private String createdBy;
-    private String coverPhotoUrl;
+    private String photoUrl;
     private Date dateCreated;
-
-
-    public Album(String id, String name, String createdBy, String coverPhotoUrl, Date dateCreated) {
-        this.id = id;
-        this.name = name;
-        this.createdBy = createdBy;
-        this.coverPhotoUrl = coverPhotoUrl;
-        this.dateCreated = dateCreated;
-    }
 
     public String getId() {
         return id;
@@ -29,12 +20,12 @@ public class Album {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAlbumId() {
+        return albumId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
     }
 
     public String getCreatedBy() {
@@ -45,12 +36,12 @@ public class Album {
         this.createdBy = createdBy;
     }
 
-    public String getCoverPhotoUrl() {
-        return coverPhotoUrl;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public void setCoverPhotoUrl(String coverPhotoUrl) {
-        this.coverPhotoUrl = coverPhotoUrl;
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
     public Date getDateCreated() {
@@ -58,6 +49,14 @@ public class Album {
     }
 
     public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Photo(String id, String albumId, String createdBy, String photoUrl, Date dateCreated) {
+        this.id = id;
+        this.albumId = albumId;
+        this.createdBy = createdBy;
+        this.photoUrl = photoUrl;
         this.dateCreated = dateCreated;
     }
 }

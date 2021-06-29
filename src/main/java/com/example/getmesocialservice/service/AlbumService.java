@@ -6,29 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlbumService {
     @Autowired
     private AlbumRepository albumRepository;
 
+    public Album saveAlbum(Album album){
+        return albumRepository.save(album);
+    }
+
     public List<Album> getAllAlbum() {
-        return albumRepository.getAllAlbum();
+        return albumRepository.findAll();
     }
 
-    public Album getAlbum(int albumId) {
-        return albumRepository.getAlbum(albumId);
+    public Optional<Album> getAlbumById(String id) {
+        return albumRepository.findById(id);
     }
 
-    public Album addAlbum(Album album) {
-        return albumRepository.addAlbum(album);
+    public void deleteAlbum(String id) {
+        albumRepository.deleteById(id);
     }
 
-    public Album updateAlbum(int albumId, Album album) {
-        return albumRepository.updateAlbum(albumId, album);
-    }
-
-    public Album deleteAlbum(int albumId) {
-        return albumRepository.deleteAlbum(albumId);
+    public Album updateAlbum(Album album) {
+        return albumRepository.save(album);
     }
 }
