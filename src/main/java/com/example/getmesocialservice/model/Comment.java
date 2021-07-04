@@ -2,6 +2,7 @@ package com.example.getmesocialservice.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Comment {
@@ -10,6 +11,7 @@ public class Comment {
     private String id;
     private String photoId;
     private String createdBy;
+    @Size(min = 5, message= "Comment must be more than 5 letters")
     private String message;
     private Date dateCreated;
 

@@ -2,11 +2,13 @@ package com.example.getmesocialservice.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Album {
     @Id
     private String id;
+    @Size(max=10, message= "Name must be less than 10 letters")
     private String name;
     private String createdBy;
     private String coverPhotoUrl;
