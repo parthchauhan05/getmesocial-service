@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.model;
 
+import com.example.getmesocialservice.validation.ValidName;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.Size;
@@ -10,6 +11,7 @@ public class Comment {
     @Id
     private String id;
     private String photoId;
+    @ValidName
     private String createdBy;
     @Size(min = 5, message= "Comment must be more than 5 letters")
     private String message;

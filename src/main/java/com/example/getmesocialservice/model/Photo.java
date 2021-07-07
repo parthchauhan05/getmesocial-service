@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.model;
 
+import com.example.getmesocialservice.validation.ValidName;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
@@ -8,6 +9,7 @@ public class Photo {
     @Id
     private String id;
     private String albumId;
+    @ValidName
     private String createdBy;
     private String photoUrl;
     private Date dateCreated;

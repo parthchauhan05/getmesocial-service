@@ -5,6 +5,7 @@ import com.example.getmesocialservice.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,12 +25,12 @@ public class AlbumResource {
     }
 
     @PostMapping
-    public Album saveAlbum(@RequestBody Album album) {
+    public Album saveAlbum(@RequestBody @Valid Album album) {
         return albumService.saveAlbum(album);
     }
 
     @PutMapping
-    public Album updateAlbum(@RequestBody Album album) {
+    public Album updateAlbum(@RequestBody @Valid Album album) {
         return albumService.updateAlbum(album);
     }
 

@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.model;
 
+import com.example.getmesocialservice.validation.ValidName;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.Size;
@@ -10,6 +11,7 @@ public class Album {
     private String id;
     @Size(max=10, message= "Name must be less than 10 letters")
     private String name;
+    @ValidName
     private String createdBy;
     private String coverPhotoUrl;
     private Date dateCreated;
